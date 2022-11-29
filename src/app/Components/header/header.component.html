@@ -1,0 +1,14 @@
+<div class="header-container">
+    <div class="header-container__logo-box">
+        <img class="logo" src="https://img.icons8.com/ios/512/restaurant-building.png">
+    </div>
+    <div class="header-container__title">
+        <h1>Buisness project</h1>
+    </div>
+    <div class="header-container__buttons">
+        <button [disabled]="startBtnClicked" class="btn" (click)="start()">Start</button>
+        <button class="btn" [disabled]="!startBtnClicked" (click)="!pauseBtnClicked ? pause() : continue()">{{!pauseBtnClicked ? 'Pause' : 'Continue'}}</button>
+        <button class="btn">Fast</button>
+        <button class="btn">Slow</button>
+    </div>
+</div>

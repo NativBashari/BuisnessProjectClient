@@ -1,0 +1,5 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 2px #2096be;
+}/*# sourceMappingURL=header.component.css.map */

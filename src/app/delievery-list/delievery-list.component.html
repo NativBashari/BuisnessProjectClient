@@ -1,0 +1,5 @@
+<div class="delievery-container">
+    <div *ngFor="let order of signalRService.ordersToDelieveryData">
+        <app-order [order]="order"></app-order>
+    </div>
+</div>

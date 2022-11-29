@@ -1,0 +1,15 @@
+.products-box{
+    display: flex;
+    justify-content: space-between;
+}
+.product-img{
+    width: 2rem;
+    height: 2rem;
+}
+
+.done{
+    opacity: 100;
+}
+.undone{
+    opacity: 0;
+}
