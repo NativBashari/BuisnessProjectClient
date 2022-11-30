@@ -1,7 +1,24 @@
 .orders-container{
  background-color: #053e75;
- padding: 3rem;
+ padding: 0rem 3rem 3rem 3rem;
  margin: 3rem;
- display: flex;
- justify-content: space-around;
+
+
+ &__title{
+    display: flex;
+    justify-content: center; 
+    align-items:flex-start;
+    font-size: 1.6rem;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: underline;
+    
+ }
+ &__orders{
+    display: flex ;
+    justify-content: space-around;
+    min-height: 7.5rem;
+
+ }
+
 }

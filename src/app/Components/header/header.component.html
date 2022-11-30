@@ -8,7 +8,5 @@
     <div class="header-container__buttons">
         <button [disabled]="startBtnClicked" class="btn" (click)="start()">Start</button>
         <button class="btn" [disabled]="!startBtnClicked" (click)="!pauseBtnClicked ? pause() : continue()">{{!pauseBtnClicked ? 'Pause' : 'Continue'}}</button>
-        <button class="btn">Fast</button>
-        <button class="btn">Slow</button>
     </div>
 </div>

@@ -20,27 +20,5 @@ $borders-color: #053e75;
     margin-left: 2rem;
 }
 
-.btn{
-    margin: 1rem 1rem 1rem 0.2rem;
-    padding: 0.5rem;
-    background-color: #053e75;
-    border: none;
-    color: #fff;
-    width: 9rem;
-    height: 4.5rem;
-    cursor: pointer;
-    transform: scale(1);
-    transition: all .2s;
-    &:hover{
-      background-color: rgb(10, 10, 117);
-      transform: scale(1.2);
-    }
-    &:active{
-        background-color: #000;
-    }
-    &:disabled{
-        opacity: 20%;
-        cursor:auto;
-    }
-}
+
 
