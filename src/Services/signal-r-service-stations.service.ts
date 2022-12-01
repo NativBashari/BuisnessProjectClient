@@ -23,9 +23,9 @@ export class SignalRServiceStationsService{
         
     }
 
-    public startServiceStationsConnection(){
+    public startServiceStationsConnection(connectionHubUrl: string){
       this.serviceStationsHubConnection = new signalR.HubConnectionBuilder()
-      .withUrl('http://localhost:5171/ServiceStations', {
+      .withUrl(connectionHubUrl, {
         skipNegotiation: true,
         transport: signalR.HttpTransportType.WebSockets
       })
@@ -35,15 +35,15 @@ export class SignalRServiceStationsService{
       .then(() => console.log("Service stations connection started"))
       .catch(err => console.log('Error while service stations connection: '+ err))  
     }
-   public addTransferServiceStationsDataListener(){
-    this.serviceStationsHubConnection!.on('TransferServiceStationsData', (data) => {
+   public addTransferServiceStationsDataListener(listenerName: string){
+    this.serviceStationsHubConnection!.on(listenerName, (data) => {
       this.serviceStationsData = data;
        console.log(data);
     } )
    }
-   public startOrdersToPrepareConnection(){
+   public startOrdersToPrepareConnection(connectionHubUrl: string){
     this.ordersToPrepareHubConnection = new signalR.HubConnectionBuilder()
-    .withUrl('http://localhost:5171/OrdersToPrepare', {
+    .withUrl(connectionHubUrl, {
       skipNegotiation: true,
       transport: signalR.HttpTransportType.WebSockets
     })
@@ -53,15 +53,15 @@ export class SignalRServiceStationsService{
     .then(() => console.log("Orders to prepare connection started"))
     .catch(err => console.log("error while starting orders to prepare connection" + err))
   }
-  public addTransferOrdersToPrepareDataListener(){
-    this.ordersToPrepareHubConnection!.on('TransferOrdersToPrepareData', (data) => {
+  public addTransferOrdersToPrepareDataListener(listenerName: string){
+    this.ordersToPrepareHubConnection!.on(listenerName, (data) => {
       this.ordersToPrepareData = data;
       console.log(data);
     })
   }
-  public startOrdersToDelieveryConnection(){
+  public startOrdersToDelieveryConnection(connectionHubUrl: string){
     this.ordersToDelieveryHubConnection = new signalR.HubConnectionBuilder()
-    .withUrl('http://localhost:5171/OrdersToDelievery', {
+    .withUrl(connectionHubUrl, {
       skipNegotiation: true,
       transport: signalR.HttpTransportType.WebSockets
     })
@@ -71,8 +71,8 @@ export class SignalRServiceStationsService{
     .then(() => console.log("Order to delievery connection started"))
     .catch(err => console.log("error while starting the order to delievery connection" + err));
   }
-  public addTransferOrdersToDelieveryDataListener(){
-    this.ordersToDelieveryHubConnection!.on('TransferOrdersToDelieveryData', (data) => {
+  public addTransferOrdersToDelieveryDataListener(listenerName: string){
+    this.ordersToDelieveryHubConnection!.on(listenerName, (data) => {
       this.ordersToDelieveryData = data;
       console.log(data);
     })

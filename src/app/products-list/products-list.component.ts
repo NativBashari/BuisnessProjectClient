@@ -8,10 +8,9 @@ import { Product } from 'src/Models/Product.mode';
 })
 export class ProductsListComponent implements OnInit {
 
-  @Input() products: Product[];
+  @Input() products: Product[] = [];
 
   constructor() { 
-    this.products = [];
   }
 
   ngOnInit(): void {

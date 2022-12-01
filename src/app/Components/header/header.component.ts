@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,7 @@ export class HeaderComponent implements OnInit {
   startBtnClicked: boolean;
   pauseBtnClicked: boolean;
 
-  constructor(private http: HttpClient) {
+  constructor(private httpClient: HttpClient) {
     this.startBtnClicked = false;
     this.pauseBtnClicked = false;
    }
@@ -19,16 +20,16 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
   start(){
-    this.http.get("http://localhost:5171/api/Manager/Start").subscribe(res => console.log(res));
+    this.httpClient.get(`${environment.baseApiUrl}/Manager/Start`).subscribe(res => console.log(res));
     this.startBtnClicked=true;
  }
 
  pause(){
-  this.http.get("http://localhost:5171/api/Manager/Pause").subscribe(res => console.log(res));
+  this.httpClient.get(`${environment.baseApiUrl}/Manager/Pause`).subscribe(res => console.log(res));
   this.pauseBtnClicked = true;
  }
  continue(){
-  this.http.get("http://localhost:5171/api/Manager/Continue").subscribe(res => console.log(res));
+  this.httpClient.get(`${environment.baseApiUrl}/Manager/Continue`).subscribe(res => console.log(res));
   this.pauseBtnClicked = false;
  }
 }

@@ -1,6 +1,5 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { Order } from 'src/Models/Order.model';
+import { Component, Input, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { SignalRServiceStationsService } from 'src/Services/signal-r-service-stations.service';
 
 @Component({
@@ -9,13 +8,20 @@ import { SignalRServiceStationsService } from 'src/Services/signal-r-service-sta
   styleUrls: ['./orders-list.component.scss']
 })
 export class OrdersListComponent implements OnInit {
-
-  constructor(public signalRService : SignalRServiceStationsService, private http : HttpClient) { 
+  @Input() isDelievery: boolean = false;
+  constructor(public signalRService : SignalRServiceStationsService) { 
   }
 
   ngOnInit(): void {
-    this.signalRService.startOrdersToPrepareConnection();
-    this.signalRService.addTransferOrdersToPrepareDataListener();
+    if(!this.isDelievery){
+      this.signalRService.startOrdersToPrepareConnection(environment.ordersHubUrl);
+      this.signalRService.addTransferOrdersToPrepareDataListener('TransferOrdersToPrepareData');
+    }
+    else{
+      this.signalRService.startOrdersToDelieveryConnection(environment.delieveryHubUrl);
+      this.signalRService.addTransferOrdersToDelieveryDataListener('TransferOrdersToDelieveryData');
+    }
+
   }
 
 }

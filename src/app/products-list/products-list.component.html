@@ -1,5 +1,13 @@
-<div class="products-box">
-    <div *ngFor="let product of products" >
-        <img [src]="product.image" class="product-img" [ngClass]="product.isDone ? 'done' : 'undone' ">
+<div>
+    <div class="products-list">
+        <ul>
+            <li *ngFor="let product of products" class="product-item">{{product.name}}</li>
+        </ul>
     </div>
+    <div class="products-box">
+        <div *ngFor="let product of products">
+            <img [src]="product.image" class="product-img" [ngClass]="product.isDone ? 'done' : 'undone' ">
+        </div>
+    </div>
+
 </div>

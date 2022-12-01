@@ -1,6 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ServiceStation } from 'src/Models/ServiceStation.model';
+import { environment } from 'src/environments/environment';
 import { SignalRServiceStationsService } from 'src/Services/signal-r-service-stations.service';
 
 @Component({
@@ -10,11 +9,11 @@ import { SignalRServiceStationsService } from 'src/Services/signal-r-service-sta
 })
 export class ServiceStationsListComponent implements OnInit {
 
-  constructor(public signalRService : SignalRServiceStationsService, private http : HttpClient ) {
+  constructor(public signalRService : SignalRServiceStationsService) {
    }
 
   ngOnInit(): void {
-    this.signalRService.startServiceStationsConnection();
-    this.signalRService.addTransferServiceStationsDataListener();
+    this.signalRService.startServiceStationsConnection(environment.serviceStationsHubUrl);
+    this.signalRService.addTransferServiceStationsDataListener('TransferServiceStationsData');
   }
 }

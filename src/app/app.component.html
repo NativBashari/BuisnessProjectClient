@@ -1,17 +1,16 @@
-<div >
-   
+<div>
     <div>
         <app-header></app-header>
     </div>
     <div class="central-box">
-            <div>
-                <app-service-stations-list></app-service-stations-list>
-            </div>
-            <div>
-                <app-orders-list></app-orders-list>
-            </div>  
         <div>
-            <app-delievery-list></app-delievery-list>
+            <app-service-stations-list></app-service-stations-list>
+        </div>
+        <div>
+            <app-orders-list [isDelievery]="false"></app-orders-list>
+        </div>
+        <div>
+            <app-orders-list [isDelievery]="true"></app-orders-list>
         </div>
     </div>
 </div>

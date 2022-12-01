@@ -6,6 +6,17 @@
     width: 2rem;
     height: 2rem;
 }
+.product-item{
+    color: #fff;
+    font-size: 1.5rem;
+}
+.products-list{
+    display: flex;
+    justify-content: start;
+}
+ul{
+    padding: 0;
+}
 
 .done{
     opacity: 100;
