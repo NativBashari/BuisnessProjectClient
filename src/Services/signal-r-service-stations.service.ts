@@ -38,7 +38,6 @@ export class SignalRServiceStationsService{
    public addTransferServiceStationsDataListener(listenerName: string){
     this.serviceStationsHubConnection!.on(listenerName, (data) => {
       this.serviceStationsData = data;
-       console.log(data);
     } )
    }
    public startOrdersToPrepareConnection(connectionHubUrl: string){
@@ -56,7 +55,7 @@ export class SignalRServiceStationsService{
   public addTransferOrdersToPrepareDataListener(listenerName: string){
     this.ordersToPrepareHubConnection!.on(listenerName, (data) => {
       this.ordersToPrepareData = data;
-      console.log(data);
+ 
     })
   }
   public startOrdersToDelieveryConnection(connectionHubUrl: string){
@@ -74,7 +73,6 @@ export class SignalRServiceStationsService{
   public addTransferOrdersToDelieveryDataListener(listenerName: string){
     this.ordersToDelieveryHubConnection!.on(listenerName, (data) => {
       this.ordersToDelieveryData = data;
-      console.log(data);
     })
   }
 

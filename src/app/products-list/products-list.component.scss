@@ -6,13 +6,14 @@
     width: 2rem;
     height: 2rem;
 }
-.product-item{
-    color: #fff;
-    font-size: 1.5rem;
-}
+
 .products-list{
     display: flex;
     justify-content: start;
+    &__item{
+        color: #fff;
+        font-size: 1.5rem;
+    }
 }
 ul{
     padding: 0;
