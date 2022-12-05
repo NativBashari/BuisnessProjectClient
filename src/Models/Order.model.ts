@@ -5,4 +5,6 @@ export interface Order{
     products : Product[];
     estimatedTime: Date;
     isFailed:boolean;
+    isDelievery: boolean;
+    delieveryFailed: boolean;
 }

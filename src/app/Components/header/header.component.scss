@@ -3,7 +3,7 @@ $borders-color: #053e75;
 .header-container{
     display: flex;
     justify-content: space-between;
-    border-bottom: solid 2px $borders-color;
+    border-bottom: solid 4px $borders-color;
        &__buttons{
            display: flex;
            justify-content: space-between;
@@ -13,6 +13,7 @@ $borders-color: #053e75;
           justify-content: center;
           text-transform: uppercase;
           font-size: 1.6rem;
+          color: #fff;
              @media (max-width: 768px) {
                            font-size: 1rem;
                  }     
