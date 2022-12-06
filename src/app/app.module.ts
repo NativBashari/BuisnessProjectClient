@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignalRServiceStationsService } from 'src/Services/signal-r-service-stations.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
@@ -22,6 +23,7 @@ import { ProductsListComponent } from './products-list/products-list.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule
   ],
   providers: [SignalRServiceStationsService],

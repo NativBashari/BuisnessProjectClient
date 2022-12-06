@@ -1,5 +1,5 @@
 <div class="queues-box">
-    <div *ngFor="let serviceStation of signalRService.serviceStationsData" class="queues-box__item">
+    <div *ngFor="let serviceStation of signalRService.serviceStationsData">
         <app-service-station [serviceStation]="serviceStation"></app-service-station>
     </div>
 </div>

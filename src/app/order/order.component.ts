@@ -9,7 +9,7 @@ import { Order } from 'src/Models/Order.model';
 export class OrderComponent implements OnInit {
 
   @Input() order: Order;
-  timeDelta: number =0;
+  
   constructor() {
     this.order = {id :0 , products: [] , estimatedTime: new Date(), isFailed: false, isDelievery : false, delieveryFailed: false}
 

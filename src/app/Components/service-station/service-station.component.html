@@ -1,10 +1,13 @@
 
-<div class="queue-box">
-        <button class="btn" (click)="closeServiceStation()">Close</button>
-        <div>
-            <img class="queue-icon" src="https://cdn-icons-png.flaticon.com/512/3298/3298952.png">
+    <div class="button-box">
+        <img class="button-box__img" [src]="queueIconUrl"> 
+        <button class="btn btn-outline" (click)="closeServiceStation()">Close</button>
+
+
+    <div class="queue-box " [ngClass]="numOfCustomers > 0 ? 'customer-in-an' : ''">
+        <div class="customers-box" [ngClass]="numOfCustomers > 0 ? 'fix-an' : ''">           
+                <p class="customers-box__count">{{numOfCustomers}}</p>
         </div>
-        <div class="customers-box"> 
-            <div class="customer-item" *ngFor="let customer of serviceStation.customers"></div>
-        </div>
-</div>
+    </div>
+
+

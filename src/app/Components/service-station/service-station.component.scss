@@ -1,19 +1,50 @@
-.customers-box{
-    display: flex;
-    justify-content:start;
+
+.queue-icon{
+    width: 5rem;
 }
 .queue-box{
     display: flex;
-    border: 1px solid ;
+    flex-direction: column;
+    justify-content: center;
+    //align-items: center;
+    border: 2px solid #053e75;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 100%;
+}
+.customers-box{
+    text-align: center;
+    align-self: center;
+    &__count{
+        font-size: 3rem;
+        color: #fff;
+        margin-top: 2rem;
+    }
+}
+
+.customer-in-an{
+    animation: customer-in 5s linear infinite;
+    border: 5px dashed #053e75;;
+}
+.fix-an{
+    animation: fix 5s linear infinite;
+}
+.button-box{
+    display: flex;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
+    &__img{
+        width: 5rem;
+        margin-bottom: -1rem;
+    }
 }
-.customer-item{
-    width: 2rem;
-    height: 2rem;
-    background-color: green;
-    border-radius: 50%;
-    
+
+@keyframes customer-in{
+    from {transform:  rotate(0);}
+    to   {transform:  rotate(360deg);}
 }
-.queue-icon{
-    width: 5rem;
+@keyframes fix{
+    from {transform:  rotate(0);}
+    to   {transform:  rotate(-360deg);}
 }

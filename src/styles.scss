@@ -10,13 +10,13 @@ body{
     background-color: #1171a4;
 }
 .btn{
-    margin: 1rem 1rem 1rem 0.2rem;
+    margin: 1rem 1rem 1rem 1rem;
     padding: 0.5rem;
     background-color: #053e75;
     border: none;
     color: #fff;
     width: 9rem;
-    height: 4.5rem;
+    height: 4rem;
     cursor: pointer;
     transform: scale(1);
     transition: all .2s;
@@ -31,6 +31,12 @@ body{
         opacity: 20%;
         cursor:auto;
     }
+}
+
+.btn-outline{
+    background-color: transparent;
+    border: 5px solid  #053e75 ;
+    border-radius: 10%;
 }
 
 

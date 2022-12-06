@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { ServiceStation } from 'src/Models/ServiceStation.model';
 
@@ -10,19 +10,22 @@ import { ServiceStation } from 'src/Models/ServiceStation.model';
 })
 export class ServiceStationComponent implements OnInit{
 
+  queueIconUrl: string = "https://o.remove.bg/downloads/3d7e5690-9c3c-4a5f-9a73-c27e0eb8c44f/download-removebg-preview.png"
   @Input() serviceStation: ServiceStation;
-
+  numOfCustomers : number =0;
   constructor(private http: HttpClient) {
       this.serviceStation =  {id :0 , customers : []};
    }
 
   ngOnInit(): void {
-
+    this.numOfCustomers = this.serviceStation.customers.length;
   }
+
 
   closeServiceStation(){
     this.http.get(`${environment.baseApiUrl}/ServiceStations/CloseServiceStation/${this.serviceStation.id}`)
     .subscribe(res => console.log(res));
   }
 
+  
 }
