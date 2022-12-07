@@ -1,13 +1,3 @@
-.products-box{
-    display: flex;
-    justify-content: space-between;
-}
-.product-img{
-    width: 3rem;
-    height: 3rem;
-    margin: 0.5rem;
-}
-
 .products-list{
     display: flex;
     justify-content: start;
@@ -16,10 +6,18 @@
         font-size: 1.2rem;
     }
 }
+.products-box{
+    display: flex;
+    justify-content: space-between;
+    &__product-img{
+        width: 3rem;
+        height: 3rem;
+        margin: 0.5rem;
+    }
+}
 ul{
     padding: 0;
 }
-
 .done{
     opacity: 100;
 }

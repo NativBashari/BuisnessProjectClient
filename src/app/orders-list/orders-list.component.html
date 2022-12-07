@@ -2,14 +2,24 @@
     <div class="orders-container__title">
         <h1>{{!isDelievery ? 'Orders' : 'Delievery'}}</h1>
     </div>
-        <div *ngIf="!isDelievery" class="orders-container__orders" [@listAnimation]="signalRService.ordersToPrepareData.length">
+        <div *ngIf="!isDelievery" class="orders-container__orders" [@listAnimation]="'flyIn'">
             <div *ngFor="let order of signalRService.ordersToPrepareData">
                 <app-order [order]="order"></app-order>
             </div>
         </div>
-    <div *ngIf="isDelievery" class="orders-container__orders" [@listAnimation]="signalRService.ordersToDelieveryData.length">
+    <div *ngIf="isDelievery" class="orders-container__orders" [@listAnimation]="'flyIn'">
         <div *ngFor="let order of signalRService.ordersToDelieveryData">
             <app-order [order]="order"></app-order>
         </div>
+    </div>
+
+    <div>
+        <button (click)="add()">Add</button>
+        <button (click)="remove()">Remove</button>
+        <ul>
+            <li *ngFor="let item of orders" [@listAnimation]="'flyIn'">
+                order;
+            </li>
+        </ul>
     </div>
 </div>

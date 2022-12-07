@@ -8,10 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'buisness-project-client';
-
+  showBuiesnessSettingsComponent: boolean = false;
   constructor(private http: HttpClient){
 
   }
 
+  onOpen(param: boolean){
+    this.showBuiesnessSettingsComponent = true;
+  }
+
+  onClose(param: boolean){
+    this.showBuiesnessSettingsComponent = false;
+  }
  
 }

@@ -1,0 +1,40 @@
+.form-container{
+    display: flex;
+    justify-content: center;
+}
+.input-container {
+    margin: 1rem;
+
+
+    &__input{
+    background-color: #04325e;
+    border: none;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 1.8rem;
+    outline: 0;
+    }
+    
+  }
+  label{
+    display: block;
+    font-size: 1.4rem;
+    color: #fff;
+    font-weight: 100;
+  }
+
+  .title-box{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    &__title{
+        font-size: 2rem;
+        color: #fff;
+
+    }
+  }
+
+  .btn-container{
+    display: flex;
+    justify-content: center;
+  }

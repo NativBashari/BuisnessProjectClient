@@ -2,12 +2,13 @@
     border: solid 2px #000 ;
     padding: 0rem 2.5rem 2.5rem 2.5rem ;
     box-shadow: 5px 10px 8px #000;
+    &__failed-message{
+        color: red;
+        font-size: 2.6rem;
+    }
 }
-.failed-message{
-    color: red;
-    font-size: 2.6rem;
-}
-.time-box-container{
+
+.time-box{
     display: flex;
     justify-content: center;
     &__box{

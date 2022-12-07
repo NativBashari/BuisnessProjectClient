@@ -6,7 +6,7 @@
     </div>
     <div class="products-box">
         <div *ngFor="let product of products">
-            <img [src]="product.image" class="product-img" [ngClass]="product.isDone ? 'done' : 'undone' ">
+            <img [src]="product.image" class="products-box__product-img" [ngClass]="product.isDone ? 'done' : 'undone' ">
         </div>
     </div>
 

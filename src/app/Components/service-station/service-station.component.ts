@@ -10,7 +10,7 @@ import { ServiceStation } from 'src/Models/ServiceStation.model';
 })
 export class ServiceStationComponent implements OnInit{
 
-  queueIconUrl: string = "https://o.remove.bg/downloads/3d7e5690-9c3c-4a5f-9a73-c27e0eb8c44f/download-removebg-preview.png"
+  queueIconUrl: string = "../assets/queue-icon.png";
   @Input() serviceStation: ServiceStation;
   numOfCustomers : number =0;
   constructor(private http: HttpClient) {

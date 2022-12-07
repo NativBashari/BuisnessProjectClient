@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -11,6 +11,7 @@ export class HeaderComponent implements OnInit {
 
   startBtnClicked: boolean;
   pauseBtnClicked: boolean;
+  @Output() openSettings: EventEmitter<boolean> = new EventEmitter();
 
   constructor(private httpClient: HttpClient) {
     this.startBtnClicked = false;
@@ -20,7 +21,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
   start(){
-    this.httpClient.get(`${environment.baseApiUrl}/Manager/Start`).subscribe(res => console.log(res));
+    this.openSettings.emit(true);
     this.startBtnClicked=true;
  }
 

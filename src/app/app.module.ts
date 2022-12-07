@@ -10,6 +10,8 @@ import { HeaderComponent } from './Components/header/header.component';
 import { OrdersListComponent } from './orders-list/orders-list.component';
 import { OrderComponent } from './order/order.component';
 import { ProductsListComponent } from './products-list/products-list.component';
+import { BuiesnessSettingsComponent } from './buiesness-settings/buiesness-settings.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,16 @@ import { ProductsListComponent } from './products-list/products-list.component';
     HeaderComponent,
     OrdersListComponent,
     OrderComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    BuiesnessSettingsComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
+   
   ],
   providers: [SignalRServiceStationsService],
   bootstrap: [AppComponent]

@@ -1,12 +1,10 @@
 
-    <div class="button-box">
-        <img class="button-box__img" [src]="queueIconUrl"> 
+    <div class="service-station-box">
+        <img class="service-station-box__img" [src]="queueIconUrl"> 
         <button class="btn btn-outline" (click)="closeServiceStation()">Close</button>
-
-
     <div class="queue-box " [ngClass]="numOfCustomers > 0 ? 'customer-in-an' : ''">
-        <div class="customers-box" [ngClass]="numOfCustomers > 0 ? 'fix-an' : ''">           
-                <p class="customers-box__count">{{numOfCustomers}}</p>
+        <div class="queue-box__customers-box" [ngClass]="numOfCustomers > 0 ? 'fix-an' : ''">           
+                <p class="queue-box__customers-box__count">{{numOfCustomers}}</p>
         </div>
     </div>
 

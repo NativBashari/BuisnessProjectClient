@@ -1,24 +1,31 @@
 
-.queue-icon{
-    width: 5rem;
+.service-station-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &__img{
+        width: 5rem;
+        margin-bottom: -1rem;
+    }
 }
+
 .queue-box{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    //align-items: center;
     border: 2px solid #053e75;
     width: 8rem;
     height: 8rem;
     border-radius: 100%;
-}
-.customers-box{
-    text-align: center;
-    align-self: center;
-    &__count{
-        font-size: 3rem;
-        color: #fff;
-        margin-top: 2rem;
+    &__customers-box{
+        text-align: center;
+        align-self: center;
+        &__count{
+            font-size: 3rem;
+            color: #fff;
+            margin-top: 2rem;
+        }
     }
 }
 
@@ -28,16 +35,6 @@
 }
 .fix-an{
     animation: fix 5s linear infinite;
-}
-.button-box{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    &__img{
-        width: 5rem;
-        margin-bottom: -1rem;
-    }
 }
 
 @keyframes customer-in{

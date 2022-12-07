@@ -1,10 +1,10 @@
 <div class="order-box">
   <h2>Order id: {{order.id}}</h2>
   <app-products-list [products]="order.products"></app-products-list>
-  <p class="failed-message" *ngIf="order.isFailed">Failed!!!</p>
-  <div *ngIf="order.isDelievery" class="time-box-container">
-      <div class="time-box-container__box">
-        <p class="time-box-container__text">Estimated time: {{order.estimatedTime | date: 'mediumTime'}}</p>
+  <p class="order-box__failed-message" *ngIf="order.isFailed">Failed!!!</p>
+  <div *ngIf="order.isDelievery" class="time-box">
+      <div class="time-box__box">
+        <p class="time-box__text">Estimated time: {{order.estimatedTime | date: 'mediumTime'}}</p>
       </div>
   </div>
   <div *ngIf="order.delieveryFailed">

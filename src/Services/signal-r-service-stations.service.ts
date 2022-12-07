@@ -3,9 +3,11 @@ import * as signalR from "@microsoft/signalr";
 import { Injectable } from "@angular/core";
 import { ServiceStation } from "src/Models/ServiceStation.model";
 import { Order } from "src/Models/Order.model";
+import { Observable } from "rxjs";
 @Injectable()
 
 export class SignalRServiceStationsService{
+
     public serviceStationsData : ServiceStation[];
     public ordersToPrepareData : Order[];
     public ordersToDelieveryData: Order [];
@@ -71,10 +73,8 @@ export class SignalRServiceStationsService{
     .catch(err => console.log("error while starting the order to delievery connection" + err));
   }
   public addTransferOrdersToDelieveryDataListener(listenerName: string){
-    this.ordersToDelieveryHubConnection!.on(listenerName, (data) => {
-      this.ordersToDelieveryData = data;
+     this.ordersToDelieveryHubConnection!.on(listenerName, (data) => {
+        this.ordersToDelieveryData = data;
     })
-  }
-
-    
+  } 
 }
