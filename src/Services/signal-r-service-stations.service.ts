@@ -73,8 +73,9 @@ export class SignalRServiceStationsService{
     .catch(err => console.log("error while starting the order to delievery connection" + err));
   }
   public addTransferOrdersToDelieveryDataListener(listenerName: string){
-     this.ordersToDelieveryHubConnection!.on(listenerName, (data) => {
+     this.ordersToDelieveryHubConnection!.on(listenerName, (data: []) => {
         this.ordersToDelieveryData = data;
+       
     })
   } 
 }

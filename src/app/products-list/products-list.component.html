@@ -1,11 +1,11 @@
 <div>
     <div class="products-list">
-        <ul>
+        <ul >
             <li *ngFor="let product of products" class="products-list__item">{{product.name}}</li>
         </ul>
     </div>
     <div class="products-box">
-        <div *ngFor="let product of products">
+        <div *ngFor="let product of products" class="ng-animate-disabled" >
             <img [src]="product.image" class="products-box__product-img" [ngClass]="product.isDone ? 'done' : 'undone' ">
         </div>
     </div>

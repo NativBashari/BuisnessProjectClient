@@ -1,6 +1,6 @@
 <div class="order-box">
   <h2>Order id: {{order.id}}</h2>
-  <app-products-list [products]="order.products"></app-products-list>
+  <app-products-list [products]="order.products" class="ng-animate-disabled"></app-products-list>
   <p class="order-box__failed-message" *ngIf="order.isFailed">Failed!!!</p>
   <div *ngIf="order.isDelievery" class="time-box">
       <div class="time-box__box">
